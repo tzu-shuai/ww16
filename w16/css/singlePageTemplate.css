@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+/* 基本重設 */
+body {
+    font-family: "Microsoft JhengHei", "PingFang TC", sans-serif; /* 添加備用字體 */
+    background-color: #2D004B; /* 網頁最底層背景：極深紫 */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%; /* 讓容器滿版，紫色背景才會漂亮 */
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+
+/* --- 重點修改：深紫色背景、文字超級大且置中 --- */
+header {
+    width: 100%;
+    min-height: 200px;      /* 增加高度，讓大字有呼吸空間 */
+    background-color: #310062; /* 深紫色背景 (Dark Purple) */
+    display: flex;
+    flex-direction: column; /* 讓標題與選單上下排列 */
+    align-items: center;    /* 水平置中 */
+    justify-content: center;/* 垂直置中 */
+    color: #FFFFFF;         /* 文字白色 */
+    padding: 40px 0;
+    border-bottom: 5px solid #BC00FF; /* 加一條亮紫色底線增加設計感 */
+}
+
+.logo { 
+    margin: 0; 
+    font-weight: 900;       /* 最粗的字體 */
+    font-size: 6rem;        /* 進一步加大字體，讓它非常大 */
+    letter-spacing: 15px;   /* 稍微增加字距，增加氣勢 */
+    text-align: center;     /* 確保文字居中 */
+    text-shadow: 5px 5px 15px rgba(0,0,0,0.5); /* 加上陰影讓字更立體 */
+    width: 100%;            /* 確保寬度滿版，強化居中 */
+}
+
+nav { 
+    margin-top: 25px; 
+}
+
+nav ul { 
+    list-style: none; 
+    display: flex; 
+    margin: 0; 
+    padding: 0; 
+}
+
+nav ul li a { 
+    color: #E0B0FF;         /* 選單用淺紫色 */
+    text-decoration: none; 
+    padding: 0 25px; 
+    font-weight: bold;
+    font-size: 1.4rem;      /* 選單字體也稍微加大 */
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: white;           /* 滑鼠移上去變白色 */
+}
+
+/* --- 中間 Hero 圖片區：添加疊加以改善可讀性 --- */
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    background-color: #000;
+}
+
+.hero-image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* 半透明黑色疊加，提高文字可讀性 */
+    z-index: 1;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0.6;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    width: 100%;
+    z-index: 2; /* 確保文字在疊加之上 */
+}
+
+.main-title {
+    font-size: 8rem;
+    font-weight: 900;
+    margin: 0;
+    text-shadow: 4px 4px 20px rgba(0,0,0,0.9);
+}
+
+/* --- 下方內容區 --- */
+.about { padding: 80px 10%; text-align: center; color: #333; line-height: 2; }
+
+.footer_banner { padding: 80px 0; text-align: center; background-color: #F3E5F5; }
+
+.button {
+    background-color: #6A0DAD; /* 按鈕也用紫色系 */
+    color: white;
+    padding: 18px 45px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    display: inline-block;
+}
+
+.copyright { text-align: center; padding: 30px; background: #1A0033; color: #888; }
+
+/* --- 響應式設計：手機和平板優化 --- */
+@media (max-width: 768px) {
+    .logo { 
+        font-size: 3rem; /* 在手機上稍微縮小，但仍保持大 */
+        letter-spacing: 8px; /* 調整字距 */
+    }
+    .main-title { 
+        font-size: 4rem; /* 縮小 Hero 標題 */
+    }
+    nav ul { 
+        flex-direction: column; /* 導航垂直排列 */
+    }
+    nav ul li a { 
+        padding: 10px 0; /* 調整間距 */
+        font-size: 1.2rem; /* 縮小選單字體 */
+    }
+    .about { 
+        padding: 40px 5%; /* 減少內邊距 */
+    }
+    .footer_banner { 
+        padding: 40px 0; /* 減少內邊距 */
+    }
+    .button { 
+        padding: 15px 30px; /* 調整按鈕大小 */
+        font-size: 1.1rem; /* 縮小按鈕字體 */
+    }
+}

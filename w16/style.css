@@ -1,0 +1,12 @@
+@charset "utf-8";
+.container header {
+    background-color: #A830DB;
+}
+.container header nav {
+    background-color: #F29EFF;
+}
+.container #hero {
+    background-image: url(images/bts4.jpg);
+}
+.container #about .text_full {
+}
